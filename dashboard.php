@@ -24,14 +24,14 @@ if (!isset($_SESSION['user_id'])) {
 <body>
     <main class="container" style="max-width: 600px; padding-top: 10vh;">
     <article>
-        <h2>Internal Lab Dashboard</h2>
-        <p>
+        <h2 style="text-align: center;">Internal Lab Dashboard</h2>
+        <p style="text-align: center;">
         Welcome, <strong>
-        <?php echo htmlspecialchars($_SESSION['email']); // print the logged in users emain, htmlspecialchars makes sure special html characters are changes to harmless html entities for security?>
+        <?php echo htmlspecialchars($_SESSION['email']); // print the logged in users email, htmlspecialchars makes sure special html characters are changes to harmless html entities for security?>
 </strong> </p>   
-<p>Succesfully logged in to the Lab Portal.</p>
+<p style="text-align: center;">Succesfully logged in to the Lab Portal.</p>
 
-<a href="logout.php"
+<a style="text-align: center;" href="logout.php"
 role="button" class="secondary">Log out</a>
         </article>
     </main>
