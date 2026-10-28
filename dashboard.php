@@ -23,16 +23,26 @@ if (!isset($_SESSION['user_id'])) {
 
 <body>
     <main class="container" style="max-width: 600px; padding-top: 10vh;">
-    <article>
-        <h2 style="text-align: center;">Internal Lab Dashboard</h2>
-        <p style="text-align: center;">
+    <article style="text-align: center;">
+        <h2>Internal Lab Dashboard</h2>
+        <p>
         Welcome, <strong>
         <?php echo htmlspecialchars($_SESSION['email']); // print the logged in users email, htmlspecialchars makes sure special html characters are changes to harmless html entities for security?>
-</strong> </p>   
-<p style="text-align: center;">Succesfully logged in to the Lab Portal.</p>
+</strong> </p> 
+<p>Succesfully logged in to the Lab Portal.</p>
 
-<a style="text-align: center;" href="logout.php"
-role="button" class="secondary">Log out</a>
+<a href="profile.php"
+role="button" class="secondary">My Profile</a>
+<br style="margin-bottom: 2rem;">
+
+<?php // makes only users with rank 2 or higher even see the Create Account button to not allow them to register.php and prevent confusion
+ if ($_SESSION['rank'] >= 2): ?>
+<a href="register.php"
+role="button" class="secondary">Create Account</a>
+<br style="margin-bottom: 2rem;">
+<?php endif; ?>
+<a href="logout.php"
+role="button" class="secondary">Log Out</a>
         </article>
     </main>
 </body>
