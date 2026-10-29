@@ -144,7 +144,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <button type="submit">CREATE ACCOUNT</button>
             </form>
             <div style="text-align: center; margin-top: 1rem;">
-                <a href="dashboard.php" style="font-size: 0.85rem;">Back to Dashboard</a>
+                <a href="dashboard.php" role="button" style="font-size: 0.85rem;">Back to Dashboard</a>
             </div>
             <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem;">
                 Failed to create an account?<br>
