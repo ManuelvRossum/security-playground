@@ -32,13 +32,13 @@ if (!isset($_SESSION['user_id'])) {
 <p>Succesfully logged in to the Lab Portal.</p>
 
 <a href="profile.php"
-role="button" class="secondary">My Profile</a>
+role="button">My Profile</a>
 <br style="margin-bottom: 2rem;">
 
 <?php // makes only users with rank 2 or higher even see the Create Account button to not allow them to register.php and prevent confusion
  if ($_SESSION['rank'] >= 2): ?>
 <a href="register.php"
-role="button" class="secondary">Create Account</a>
+role="button">Create Account</a>
 <br style="margin-bottom: 2rem;">
 <?php endif; ?>
 <a href="logout.php"
