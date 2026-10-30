@@ -1,4 +1,3 @@
-
 <?php
 // start session
 session_start();
@@ -11,11 +10,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
 
-    // intentionally vunerable query, more info in realisation document
+    // no longer vunerable query, more info in realisation document
 
-    $sql = "SELECT id, email, password, rank FROM users WHERE email = '$email' AND password = '$password'";
-
-    $result = $conn->query($sql);
+    $stmt = $conn->prepare("SELECT id, email, password, rank FROM users WHERE email = ? AND password = ?");
+    $stmt->bind_param("ss", $email, $password);
+    $stmt->execute();
+    $result = $stmt->get_result();
     $user = $result->fetch_assoc();
     // check if a user was found
     if ($user) {
